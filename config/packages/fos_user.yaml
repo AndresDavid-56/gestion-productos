@@ -5,3 +5,6 @@ fos_user:
   from_email:
     address: "andres.alvear01@epn.edu.ec"
     sender_name: "Andres Alvear"
+  registration:
+    confirmation:
+      enabled: true
