@@ -3,6 +3,8 @@
 namespace App\Form;
 
 use App\Entity\City;
+use App\Entity\Country;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -13,7 +15,11 @@ class CityType extends AbstractType
     {
         $builder
             ->add('name')
-            ->add('country')
+            ->add('country', EntityType::class,[
+                'class' => Country::class,
+                'choice_label' => 'name',
+                'placeholder' => 'Seleccione uno ...'
+                ])
         ;
     }
 
