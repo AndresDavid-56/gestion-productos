@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 
-use App\Repository\CategoryRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,7 +14,7 @@ class DefaultController extends AbstractController
     /**
      * @Route("/", name="homepage", methods={"GET"})
      */
-    public function index(CategoryRepository $categoryRepository): Response
+    public function index(): Response
     {
         return $this->render('default/index.html.twig');
     }
